@@ -28,11 +28,11 @@ const W=320,H=180;
 function vmProgress(){try{return JSON.parse(localStorage.getItem('vm_progress')||'{}');}catch(e){return{};}}
 
 const CHAPTERS=[
-  {n:'I',title:'O Labirinto de Descartes',trad:'Racionalismo — Tese',href:'stage1/',key:'stage1',
+  {n:'I',title:'O Labirinto de Descartes',trad:'Racionalismo — Tese',href:'stage1/',key:'stage1',hero:'com Raquel',
    sub:'René Descartes  •  Meditações Metafísicas  •  1641'},
-  {n:'II',title:'A Cruzada Sensorial',trad:'Empirismo — Antítese',href:'stage2/',key:'stage2',
+  {n:'II',title:'A Cruzada Sensorial',trad:'Empirismo — Antítese',href:'stage2/',key:'stage2',hero:'com Mari',
    sub:'Francis Bacon · John Locke · David Hume'},
-  {n:'III',title:'O Calvinista de Königsberg',trad:'Filosofia Crítica — Síntese',href:'stage3/',key:'stage3',
+  {n:'III',title:'O Calvinista de Königsberg',trad:'Filosofia Crítica — Síntese',href:'stage3/',key:'stage3',hero:'Raquel & Mari',
    sub:'Immanuel Kant  •  1781  •  Königsberg'},
 ];
 
@@ -117,6 +117,7 @@ function render(){
     ctx.textAlign='left';
     ctx.fillStyle=isSel?'#7a6840':'#4a4030';ctx.font='3px "Press Start 2P"';
     ctx.fillText('   '+c.trad,32,y+7);
+    ctx.textAlign='right';ctx.fillText(c.hero,W-32,y+7);ctx.textAlign='left';
     ctx.textAlign='center';
   });
 

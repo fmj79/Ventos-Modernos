@@ -46,40 +46,59 @@ function drawSpr(rows,pal,x,y,sc,fl){
   }));
 }
 
-// ── A APRENDIZ — sprite array (mesma figura de Stages 1/3, caminhada corrigida) ──
-const PF0=['____HHHHHHHH____','___HhhhhhhhhhH__','__HhSSSSSSSShhH_',
-'__HhSeHSSeHShhH_','__HhSSSSSSSShhH_','___HhSsSSsShhH__',
-'___HhSSSSSShhH__','___HhSWWWWShhH__','__HhhWWWWWWWhhH_',
-'__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','__HhhWvWrWgWhhH_',
-'__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','___HhWWWWWWhhH__',
-'__HhhjJJJJjhhH__','___HhjJJJJjhH___','____jJJJjJJJj___',
-'____jJJJjJJJj___',
-'____jJJJ_jJJJ___','_____jJJ_jJJJ___','______JJ_jJJJ___',
-'______nn_nnnnn__','__________nnnnn_'];
-const PF1=[...PF0.slice(0,19),
-'___JJJj_JJJj____','___JJJj_JJj_____','___JJJj_JJ______',
-'__nnnnn_nn______','_nnnnn__________'];
-const PB0=['____HHHHHHHH____','___HhhhhhhhhhH__','__HhHHHHHHHHhhH_',
-'__HhHhHhHhHHhhH_','_HhHHhhhhhHHhHH_','_HhHHhhhhhHHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','__HhHHhhhhHHhH__',
-'__HhhjJJJJjhhH__','___HhjJJJJjhH___','____jJJJjJJJj___',
-'____jJJJjJJJj___',
-'____jJJJ_jJJJ___','_____jJJ_jJJJ___','______JJ_jJJJ___',
-'______nn_nnnnn__','__________nnnnn_'];
-const PB1=[...PB0.slice(0,19),
-'___JJJj_JJJj____','___JJJj_JJj_____','___JJJj_JJ______',
-'__nnnnn_nn______','_nnnnn__________'];
-const PS0=['____HHHHHHHH____','___HhhhhhHHhH___','__HhhSSSSHHhHH__',
-'_HhhSSSSSHHhHH__','_HhhSSSSeHhHH___','_HhhSSSSsSHhH___',
-'_HhhSSSSSSHhH___','_HhhSSSSHhH_____','_HhhhWWWWHhH____',
-'_HhhhWWWWHhH____','_HhhhWWWWHhH____','_HhhhWvWWHhH____',
-'_HhhhWWWWHhH____','_HhhhWWWWHhH____','_HhhhWWWHhH_____',
-'_HhhhJJJJHh_____','_HhhhJJJJHh_____','_HhhhJJJJH______',
-'__HhhJJJjH______','___HhJJJjH______','____HjJJjH______',
-'____HjJJjH______','____nnnnnH______','____nnnnH_______'];
-const PS1=[...PS0.slice(0,22),'__nnnnn_nnnH____','__nnnnn_nnH_____'];
+// ── SPRITES DA MARI (16×20 px · mais baixa e de pele mais clara que a Raquel ·
+//    cabelo cacheado, blusa preta de alcinha, calça jeans, sandálias claras) ──
+const MPAL={_:null,K:'#1a0e06',k:'#3a2212',q:'#6a4424',S:'#f0c8a4',s:'#cc9c78',
+            e:'#f0f4f8',P:'#1c1c22',Q:'#3c3c48',J:'#5a7cb8',j:'#3e5a90',
+            n:'#f4eee6',p:'#f08c78'};
+const MF0=[
+'____KKKKKKKK____','__KKqkqkKkqkKK__','_KkqKSSSSSSKkKK_',
+'_KkKSeKSSeKSkqK_','KqkkSSSSSSSSkqkK','KkKkSSSssSSSqkKK',
+'KKkqkSSSSSSKkKkK','KqkKkSSSSSSqkqkK','KqkkSPSSSSPSkqkK',
+'KkKSPPPPPPPPSkKK','KKKSQPPPPPPQSKkK','_KkSPPPPPPPPSqK_',
+'___sjJJJJJJjs___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____pSp__JJj____',
+'____nnn__pSp____','_________nnn____'];
+const MF1=[
+'____KKKKKKKK____','__KKqkqkKkqkKK__','_KkqKSSSSSSKkKK_',
+'_KkKSeKSSeKSkqK_','KqkkSSSSSSSSkqkK','KkKkSSSssSSSqkKK',
+'KKkqkSSSSSSKkKkK','KqkKkSSSSSSqkqkK','KqkkSPSSSSPSkqkK',
+'KkKSPPPPPPPPSkKK','KKKSQPPPPPPQSKkK','_KkSPPPPPPPPSqK_',
+'___sjJJJJJJjs___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____jJJ__pSp____',
+'____pSp__nnn____','____nnn_________'];
+const MB0=[
+'_____KKKKKK_____','___KKqkKkqkKK___','__KkKkKkqkKkKK__',
+'_KKkqkqkKkqkqkK_','_KkKkkqkkKkkqkK_','KKkqkqkKkqkqkKkK',
+'KkqkKkKkqkKkKkqK','_KKkqkqkKkqkqkK_','_KKKkkqkkKkkqKK_',
+'_SKqkqkKkqkqkKS_','_SPKKkKkqkKkKPS_','_sPKqkKkKKqkKPs_',
+'___jKkKJJKkKj___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____psp__JJj____',
+'____nnn__psp____','_________nnn____'];
+const MB1=[
+'_____KKKKKK_____','___KKqkKkqkKK___','__KkKkKkqkKkKK__',
+'_KKkqkqkKkqkqkK_','_KkKkkqkkKkkqkK_','KKkqkqkKkqkqkKkK',
+'KkqkKkKkqkKkKkqK','_KKkqkqkKkqkqkK_','_KKKkkqkkKkkqKK_',
+'_SKqkqkKkqkqkKS_','_SPKKkKkqkKkKPS_','_sPKqkKkKKqkKPs_',
+'___jKkKJJKkKj___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____jJJ__psp____',
+'____psp__nnn____','____nnn_________'];
+const MS0=[
+'_____KKKKKK_____','___KKkKkqkqK____','__KKkKkqkKkKK___',
+'__KqkqkKkSSSS___','__KkkqkkSSeKS___','__KkqkKkSSSSSS__',
+'__KKkKkqkSSsS___','__KqkqkKkqSS____','__KkkqkKSSPSS___',
+'__KkqkKKPPPPP___','___KkKkKPPSPP___','___KkKkKPPSPP___',
+'____K_K_jJSJj___','________jJJJj___','________jJJj____',
+'_______jJ__Jj___','______jJ____Jj__','______Ss____Ss__',
+'_____pSp____pSpp','_____nnnn___nnnn'];
+const MS1=[
+'_____KKKKKK_____','___KKkKkqkqK____','__KKkKkqkKkKK___',
+'__KqkqkKkSSSS___','__KkkqkkSSeKS___','__KkqkKkSSSSSS__',
+'__KKkKkqkSSsS___','__KqkqkKkqSS____','__KkkqkKSSPSS___',
+'__KkqkKKPPPPP___','___KkKkKPPSPP___','___KkKkKPPSPP___',
+'____K_K_jJSJj___','________jJJJj___','________jJJj____',
+'_________JJ_____','_________JJ_____','_________Ss_____',
+'________pSpp____','________nnnn____'];
 
 // ── TILES — pixel arrays 16×16 (paleta única TPAL2) ─────────────────
 const TPAL2={_:null,
@@ -619,11 +638,11 @@ function startAmbient(){
 
 // ── INTRODUÇÃO ────────────────────────────────────────────────────
 const INTRO=[
-  'Você atravessou o labirinto.',
+  'Raquel atravessou o labirinto.',
   'O Cogito emergiu da dúvida.',
   '',
-  'Mas ao cruzar a saída,',
-  'uma figura bloqueia o caminho.',
+  'Agora é a vez de Mari.',
+  'Mas uma figura bloqueia o caminho.',
   '',
   '"Achava que pensar bastava?',
   ' Deixa eu te mostrar',
@@ -1164,37 +1183,27 @@ function drawTile(sx,sy,tp,c,r){
   }
 }
 
-// ── A APRENDIZ — longilínea, 4 vistas ───────────────────────────
+// ── MARI — protagonista do Capítulo II · 16×20 px · 4 vistas ──────
 // dir 0=costas  1=perfil dir  2=frontal  3=perfil esq
 function rPlayer(){
   const sx=~~(S.px-S.cx),sy=~~(S.py-S.cy);
   const n=S.frame,exp=S.experienced;
 
-  const hairC=exp?'#2a1a08':'#3a2210';
-  const skinC=exp?'#a87848':'#c8885a';
-  const blusaC=exp?'#c8c4b8':'#f0ece0';
-  const dot1C=exp?'#706090':'#9870c0';
-  const dot2C=exp?'#906868':'#c07888';
-  const dot3C=exp?'#4a6030':'#6aaa40';
-  const jeansC=exp?'#5878a0':'#7090c0';
-  const jDkC=exp?'#486890':'#5878b0';
-  const sanC=exp?'#d8d4c8':'#f0ece0';
-  const bracC='#c8a030';
-
-  const pal={_:null,H:hairC,h:hairC,S:skinC,s:skinC,e:'#f0f4f8',
-             W:blusaC,w:blusaC,v:dot1C,r:dot2C,g:dot3C,
-             J:jeansC,j:jDkC,n:sanC,G:bracC};
+  // "Are you Experienced?": a paleta amadurece levemente após a epifania
+  const pal=exp?{...MPAL,k:'#2e1a0c',q:'#5a3a1e',S:'#dcb48e',s:'#b88a66',
+                  P:'#141418',Q:'#30303a',J:'#4c6a9c',j:'#34507e',n:'#dcd6cc',p:'#c87a6a'}
+               :MPAL;
 
   let rows,fl=false;
-  if(S.face===0)rows=S.pf?PB1:PB0;
-  else if(S.face===2)rows=S.pf?PF1:PF0;
-  else{rows=S.pf?PS1:PS0;if(S.face===3)fl=true;}
+  if(S.face===0)rows=S.pf?MB1:MB0;
+  else if(S.face===2)rows=S.pf?MF1:MF0;
+  else{rows=S.pf?MS1:MS0;if(S.face===3)fl=true;}
 
-  // Sombra elíptica no chão (alinhada à sola do sprite: linha 23 → y=sy)
+  // Sombra elíptica no chão (sola do sprite: linha 19 → y=sy)
   ctx.fillStyle='rgba(0,0,0,.28)';
   ctx.fillRect(sx-5,sy,11,2);ctx.fillRect(sx-4,sy+1,9,1);
 
-  drawSpr(rows,pal,sx-8,sy-23,1,fl);
+  drawSpr(rows,pal,sx-8,sy-19,1,fl);
 
   // Partículas "Are you Experienced?"
   if(exp){
@@ -1271,7 +1280,7 @@ function rHint(){
   let hint='[E]';
   if(o==='bacon_table')hint=S.baconSelected.size===4?'[E] Confirmar':'[E] '+S.baconSelected.size+'/4';
   if(o.startsWith('hume_'))hint='[E] '+['Colisão','Intervalo','Garfo'][parseInt(o.slice(5))]||'[E]';
-  ctx.fillText(hint,px,py-16);ctx.textAlign='left';
+  ctx.fillText(hint,px,py-21);ctx.textAlign='left';
 }
 
 // ── RÓTULO DE SETOR ───────────────────────────────────────────────

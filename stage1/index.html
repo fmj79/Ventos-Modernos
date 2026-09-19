@@ -72,11 +72,11 @@ const POS_C=[3,6],POS_M=[13,17],POS_A=[20,12];
 const DR1=[[7,13],[7,14],[7,15]],DR2=[[16,13],[16,14],[16,15]];
 
 // ── SPRITES DA APRENDIZ (16×24 px · capuz e robe gótica) ───────────
-const PPAL={_:null,H:'#2a1808',h:'#5a3820',S:'#c8885a',s:'#a06030',e:'#f0f4f8',
+const PPAL={_:null,H:'#2a1808',h:'#5a3820',x:'#7a5030',S:'#c8885a',s:'#a06030',e:'#f0f4f8',
             W:'#f0ece0',w:'#d8d4c8',v:'#9870c0',r:'#c07888',g:'#6aaa40',
             J:'#7090c0',j:'#4870a0',n:'#d4c8b0',G:'#c8a030'};
 const PF0=['____HHHHHHHH____','___HhhhhhhhhhH__','__HhSSSSSSSShhH_',
-'__HhSeHSSeHShhH_','__HhSSSSSSSShhH_','___HhSsSSsShhH__',
+'__HhSeHSSeHShhH_','__HhSSSSSSSShhH_','___HhSSssSShhH__',
 '___HhSSSSSShhH__','___HhSWWWWShhH__','__HhhWWWWWWWhhH_',
 '__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','__HhhWvWrWgWhhH_',
 '__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','___HhWWWWWWhhH__',
@@ -88,11 +88,12 @@ const PF0=['____HHHHHHHH____','___HhhhhhhhhhH__','__HhSSSSSSSShhH_',
 const PF1=[...PF0.slice(0,19),
 '___JJJj_JJJj____','___JJJj_JJj_____','___JJJj_JJ______',
 '__nnnnn_nn______','_nnnnn__________'];
-const PB0=['____HHHHHHHH____','___HhhhhhhhhhH__','__HhHHHHHHHHhhH_',
-'__HhHhHhHhHHhhH_','_HhHHhhhhhHHhHH_','_HhHHhhhhhHHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','__HhHHhhhhHHhH__',
+const PB0=[ // costas: cabelo liso com brilho suave (revisado)
+'____HHHHHHHH____','___HhhhhhhhhhH__','__HhhhxxxxhhhhH_',
+'__HhhxhhhhxhhhH_','__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_',
+'__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_',
+'__HhhxhhhhhxhhH_','__HhhxhhhxhxhhH_','__HhhhhhhxhhhhH_',
+'__HhhhhhhhhhhhH_','__HHhhhhhhhhhHH_','___HhhWWWWWhhH__',
 '__HhhjJJJJjhhH__','___HhjJJJJjhH___','____jJJJjJJJj___',
 '____jJJJjJJJj___',
 '____jJJJ_jJJJ___','_____jJJ_jJJJ___','______JJ_jJJJ___',

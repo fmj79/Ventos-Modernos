@@ -224,12 +224,12 @@ const KANT_SCEN=[
 ];
 
 // ── SPRITES DA PERSONAGEM (16×24 px · longilínea) ─────────────────
-const PPAL={_:null,H:'#2a1808',h:'#5a3820',S:'#c8885a',s:'#a06030',e:'#f0f4f8',
+const PPAL={_:null,H:'#2a1808',h:'#5a3820',x:'#7a5030',S:'#c8885a',s:'#a06030',e:'#f0f4f8',
             W:'#f0ece0',w:'#d8d4c8',v:'#9870c0',r:'#c07888',g:'#6aaa40',
             J:'#7090c0',j:'#4870a0',n:'#d4c8b0',G:'#c8a030'};
 const PF0=[
 '____HHHHHHHH____','___HhhhhhhhhhH__','__HhSSSSSSSShhH_',
-'__HhSeHSSeHShhH_','__HhSSSSSSSShhH_','___HhSsSSsShhH__',
+'__HhSeHSSeHShhH_','__HhSSSSSSSShhH_','___HhSSssSShhH__',
 '___HhSSSSSShhH__','___HhSWWWWShhH__','__HhhWWWWWWWhhH_',
 '__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','__HhhWvWrWgWhhH_',
 '__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','___HhWWWWWWhhH__',
@@ -241,12 +241,12 @@ const PF0=[
 const PF1=[...PF0.slice(0,19),
 '___JJJj_JJJj____','___JJJj_JJj_____','___JJJj_JJ______',
 '__nnnnn_nn______','_nnnnn__________'];
-const PB0=[
-'____HHHHHHHH____','___HhhhhhhhhhH__','__HhHHHHHHHHhhH_',
-'__HhHhHhHhHHhhH_','_HhHHhhhhhHHhHH_','_HhHHhhhhhHHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_',
-'_HhHHhhhhhhHhHH_','_HhHHhhhhhhHhHH_','__HhHHhhhhHHhH__',
+const PB0=[ // costas: cabelo liso com brilho suave (revisado)
+'____HHHHHHHH____','___HhhhhhhhhhH__','__HhhhxxxxhhhhH_',
+'__HhhxhhhhxhhhH_','__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_',
+'__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_',
+'__HhhxhhhhhxhhH_','__HhhxhhhxhxhhH_','__HhhhhhhxhhhhH_',
+'__HhhhhhhhhhhhH_','__HHhhhhhhhhhHH_','___HhhWWWWWhhH__',
 '__HhhjJJJJjhhH__','___HhjJJJJjhH___','____jJJJjJJJj___',
 '____jJJJjJJJj___',
 '____jJJJ_jJJJ___','_____jJJ_jJJJ___','______JJ_jJJJ___',
@@ -264,6 +264,60 @@ const PS0=[
 '__HhhJJJjH______','___HhJJJjH______','____HjJJjH______',
 '____HjJJjH______','____nnnnnH______','____nnnnH_______'];
 const PS1=[...PS0.slice(0,22),'__nnnnn_nnnH____','__nnnnn_nnH_____'];
+
+// ── SPRITES DA MARI (16×20 px · mais baixa e de pele mais clara que a Raquel ·
+//    cabelo cacheado, blusa preta de alcinha, calça jeans, sandálias claras) ──
+const MPAL={_:null,K:'#1a0e06',k:'#3a2212',q:'#6a4424',S:'#f0c8a4',s:'#cc9c78',
+            e:'#f0f4f8',P:'#1c1c22',Q:'#3c3c48',J:'#5a7cb8',j:'#3e5a90',
+            n:'#f4eee6',p:'#f08c78'};
+const MF0=[
+'____KKKKKKKK____','__KKqkqkKkqkKK__','_KkqKSSSSSSKkKK_',
+'_KkKSeKSSeKSkqK_','KqkkSSSSSSSSkqkK','KkKkSSSssSSSqkKK',
+'KKkqkSSSSSSKkKkK','KqkKkSSSSSSqkqkK','KqkkSPSSSSPSkqkK',
+'KkKSPPPPPPPPSkKK','KKKSQPPPPPPQSKkK','_KkSPPPPPPPPSqK_',
+'___sjJJJJJJjs___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____pSp__JJj____',
+'____nnn__pSp____','_________nnn____'];
+const MF1=[
+'____KKKKKKKK____','__KKqkqkKkqkKK__','_KkqKSSSSSSKkKK_',
+'_KkKSeKSSeKSkqK_','KqkkSSSSSSSSkqkK','KkKkSSSssSSSqkKK',
+'KKkqkSSSSSSKkKkK','KqkKkSSSSSSqkqkK','KqkkSPSSSSPSkqkK',
+'KkKSPPPPPPPPSkKK','KKKSQPPPPPPQSKkK','_KkSPPPPPPPPSqK_',
+'___sjJJJJJJjs___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____jJJ__pSp____',
+'____pSp__nnn____','____nnn_________'];
+const MB0=[
+'_____KKKKKK_____','___KKqkKkqkKK___','__KkKkKkqkKkKK__',
+'_KKkqkqkKkqkqkK_','_KkKkkqkkKkkqkK_','KKkqkqkKkqkqkKkK',
+'KkqkKkKkqkKkKkqK','_KKkqkqkKkqkqkK_','_KKKkkqkkKkkqKK_',
+'_SKqkqkKkqkqkKS_','_SPKKkKkqkKkKPS_','_sPKqkKkKKqkKPs_',
+'___jKkKJJKkKj___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____psp__JJj____',
+'____nnn__psp____','_________nnn____'];
+const MB1=[
+'_____KKKKKK_____','___KKqkKkqkKK___','__KkKkKkqkKkKK__',
+'_KKkqkqkKkqkqkK_','_KkKkkqkkKkkqkK_','KKkqkqkKkqkqkKkK',
+'KkqkKkKkqkKkKkqK','_KKkqkqkKkqkqkK_','_KKKkkqkkKkkqKK_',
+'_SKqkqkKkqkqkKS_','_SPKKkKkqkKkKPS_','_sPKqkKkKKqkKPs_',
+'___jKkKJJKkKj___','____jJJJJJJj____','____jJJjjJJj____',
+'____jJJ__JJj____','____jJJ__JJj____','____jJJ__psp____',
+'____psp__nnn____','____nnn_________'];
+const MS0=[
+'_____KKKKKK_____','___KKkKkqkqK____','__KKkKkqkKkKK___',
+'__KqkqkKkSSSS___','__KkkqkkSSeKS___','__KkqkKkSSSSSS__',
+'__KKkKkqkSSsS___','__KqkqkKkqSS____','__KkkqkKSSPSS___',
+'__KkqkKKPPPPP___','___KkKkKPPSPP___','___KkKkKPPSPP___',
+'____K_K_jJSJj___','________jJJJj___','________jJJj____',
+'_______jJ__Jj___','______jJ____Jj__','______Ss____Ss__',
+'_____pSp____pSpp','_____nnnn___nnnn'];
+const MS1=[
+'_____KKKKKK_____','___KKkKkqkqK____','__KKkKkqkKkKK___',
+'__KqkqkKkSSSS___','__KkkqkkSSeKS___','__KkqkKkSSSSSS__',
+'__KKkKkqkSSsS___','__KqkqkKkqSS____','__KkkqkKSSPSS___',
+'__KkqkKKPPPPP___','___KkKkKPPSPP___','___KkKkKPPSPP___',
+'____K_K_jJSJj___','________jJJJj___','________jJJj____',
+'_________JJ_____','_________JJ_____','_________Ss_____',
+'________pSpp____','________nnnn____'];
 
 // ── TILES — pixel arrays 16×16 ─────────────────────────────────────
 const TPAL={
@@ -676,9 +730,9 @@ const INTRO=[
   'O Calvinista de Königsberg',
   'bloqueia o corredor.',
   '',
-  '"Você sobreviveu ao labirinto',
-  ' e à cruzada.',
-  ' Mas ainda está presa',
+  '"Uma venceu o labirinto,',
+  ' a outra, a cruzada.',
+  ' Mas ambas seguem presas',
   ' entre dois dogmatismos."',
   '',
   'O Calvinista invoca o Stand:',
@@ -688,7 +742,7 @@ const INTRO=[
   '',
   'Seus conceitos se cristalizam.',
   'Toda pergunta já tem resposta.',
-  'Você está congelada à beira',
+  'Vocês estão congeladas à beira',
   'do que a razão pode alcançar.',
   '',
   '"Descubra os limites da razão.',
@@ -720,6 +774,7 @@ const S={
   lastSector:-1,sectorLabel:'',sectorLabelT:0,
   sectIITriggered:false,sectIIITriggered:false,
   pendingEpiphany:false,
+  trail:[],mface:2,     // Mari segue a Raquel pelo mesmo caminho (estilo Phantasy Star IV)
   frame:0,lastT:0,
 };
 
@@ -874,7 +929,7 @@ function pickOpt(idx){
       if(allDone){
         S.progress=2;
         DR2.forEach(([r,c])=>MAP[r][c]=FLOOR);
-        S.calvinistMsg=['...Você está reestruturando','tudo que aprendi.'];
+        S.calvinistMsg=['...Vocês estão reestruturando','tudo que aprendi.'];
         S.calvinistT=7.0;
         S.okMsg=['Observatório concluído.','Espaço e tempo: formas da intuição.','Sala da Crítica aberta.'];
         S.okT=8.0;
@@ -931,10 +986,44 @@ function pickOpt(idx){
   }
 }
 
+// ── EQUIPE — Raquel à frente, Mari logo atrás ──────────────────────
+// A Mari percorre o mesmo trajeto da líder com um atraso fixo em pixels,
+// como a fila de personagens de Phantasy Star IV.
+const FOLLOW_GAP=16;
+function partyReset(){
+  // posiciona a Mari ao lado/atrás da Raquel, no primeiro espaço livre
+  const G=FOLLOW_GAP;
+  const dir=[[0,-1],[-1,0],[1,0],[0,1]].find(([dx,dy])=>{
+    for(let k=1;k<=G;k++)if(!canGo(S.px+dx*k,S.py+dy*k))return false;
+    return true;
+  })||[0,0];
+  S.trail=[];
+  for(let i=0;i<=G;i++)S.trail.push([S.px+dir[0]*(G-i),S.py+dir[1]*(G-i)]);
+  S.mface=S.face;
+}
+function partyStep(){
+  if(!S.trail.length)partyReset();
+  let [lx0,ly0]=S.trail[S.trail.length-1];
+  let dx=S.px-lx0,dy=S.py-ly0,d=Math.hypot(dx,dy);
+  if(d>40){partyReset();return;}          // salto brusco: reagrupa
+  while(d>=1){
+    lx0+=dx/d;ly0+=dy/d;
+    S.trail.push([lx0,ly0]);
+    dx=S.px-lx0;dy=S.py-ly0;d=Math.hypot(dx,dy);
+  }
+  while(S.trail.length>FOLLOW_GAP+1)S.trail.shift();
+  const [ax,ay]=S.trail[0],[bx,by]=S.trail[1]||S.trail[0];
+  const mx=bx-ax,my=by-ay;
+  if(Math.abs(mx)>.01||Math.abs(my)>.01){
+    S.mface=Math.abs(mx)>Math.abs(my)?(mx>0?1:3):(my>0?2:0);
+  }
+}
+
 function respawn(){
   if(S.progress===0){S.px=15*T;S.py=4*T+8;}
   else if(S.progress===1){S.px=15*T;S.py=16*T+8;}
   else{S.px=15*T;S.py=28*T+8;}
+  partyReset();
   camSync();
 }
 
@@ -976,6 +1065,7 @@ function update(dt){
     else if(canGo(S.px,ny))S.py=ny;
     S.px=Math.max(8,Math.min(MC*T-8,S.px));
     S.py=Math.max(8,Math.min(MR*T-8,S.py));
+    partyStep();
     if(S.moving){
       S.pft+=dt;
       if(S.pft>.35){S.pft=0;S.pf^=1;}
@@ -1007,7 +1097,7 @@ function update(dt){
           'por que os objetos obedecem às leis?',
           'Kant: é o sujeito que estrutura.',
           'Mas isso não seria idealismo?',
-          'Vamos ver se você entende a inversão.',
+          'Vamos ver se vocês entendem a inversão.',
         ];
         S.calvinistT=12.0;
       }
@@ -1263,16 +1353,35 @@ function drawSpr(rows,pal,x,y,sc,fl){
   }));
 }
 
-// ── A APRENDIZ — 16×24 px · longilínea · 4 direções ──────────────
-function rPlayer(){
-  const sx=~~(S.px-S.cx),sy=~~(S.py-S.cy);
+// ── A EQUIPE — Raquel (16×24) à frente, Mari (16×20) logo atrás ─────
+function drawRaquel(sx,sy,face,pf){
   let rows,fl=false;
-  if(S.face===0)rows=S.pf?PB1:PB0;
-  else if(S.face===2)rows=S.pf?PF1:PF0;
-  else{rows=S.pf?PS1:PS0;if(S.face===3)fl=true;}
+  if(face===0)rows=pf?PB1:PB0;
+  else if(face===2)rows=pf?PF1:PF0;
+  else{rows=pf?PS1:PS0;if(face===3)fl=true;}
   ctx.fillStyle='rgba(0,0,0,.22)';
   ctx.fillRect(sx-6,sy,13,2);ctx.fillRect(sx-5,sy+1,11,1);
   drawSpr(rows,PPAL,sx-8,sy-23,1,fl);
+}
+function drawMari(sx,sy,face,pf){
+  let rows,fl=false;
+  if(face===0)rows=pf?MB1:MB0;
+  else if(face===2)rows=pf?MF1:MF0;
+  else{rows=pf?MS1:MS0;if(face===3)fl=true;}
+  ctx.fillStyle='rgba(0,0,0,.22)';
+  ctx.fillRect(sx-5,sy,11,2);ctx.fillRect(sx-4,sy+1,9,1);
+  drawSpr(rows,MPAL,sx-8,sy-19,1,fl);
+}
+function rPlayer(){
+  const sx=~~(S.px-S.cx),sy=~~(S.py-S.cy);
+  if(!S.trail.length)partyReset();
+  const [fx,fy]=S.trail[0];
+  const mx=~~(fx-S.cx),my=~~(fy-S.cy);
+  // passo da Mari em contratempo com o da Raquel
+  const mpf=S.moving?S.pf^1:0;
+  // ordem de desenho pela profundidade (quem está mais abaixo fica na frente)
+  if(my>sy){drawRaquel(sx,sy,S.face,S.pf);drawMari(mx,my,S.mface,mpf);}
+  else{drawMari(mx,my,S.mface,mpf);drawRaquel(sx,sy,S.face,S.pf);}
   if(S.progress===3||S.scene==='epiphany'){
     ctx.fillStyle='rgba(200,160,40,.70)';
     [
@@ -1481,7 +1590,7 @@ function rEpiphany(){
     // Fase 1 — O Calvinista admite a derrota
     if(t<3.2){
       ctx.fillStyle='#5068a0';ctx.font='3px "Press Start 2P"';
-      ctx.fillText('"...Impossível. Você delimitou a razão."',W/2,H/2-32);
+      ctx.fillText('"...Impossível. Vocês delimitaram a razão."',W/2,H/2-32);
       ctx.fillStyle='#7090c0';ctx.font='4px "Press Start 2P"';
       ctx.fillText('Stand THE ANCIENT se fragmenta.',W/2,H/2-18);
       ctx.fillStyle='#4060a0';ctx.font='3px "Press Start 2P"';
