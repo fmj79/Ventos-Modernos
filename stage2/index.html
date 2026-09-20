@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Ventos Modernos — Cap. 2: A Cruzada Sensorial</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
@@ -746,7 +746,7 @@ function openDlg(key){
     S.dSel=0;
   } else if(key==='bacon_table'){
     if(S.baconSelected.size<4){
-      S.okMsg=['Marque mais '+(4-S.baconSelected.size)+' Ídolo(s).','Use [E] nos pilares de pedra.'];
+      S.okMsg=['Marque mais '+(4-S.baconSelected.size)+' Ídolo(s).','Use '+(window.VM_TOUCH?'[A]':'[E]')+' nos pilares de pedra.'];
       S.okT=2.2;return;
     }
     const names=[...S.baconSelected].map(k=>PILARS[k].name);
@@ -1280,6 +1280,7 @@ function rHint(){
   let hint='[E]';
   if(o==='bacon_table')hint=S.baconSelected.size===4?'[E] Confirmar':'[E] '+S.baconSelected.size+'/4';
   if(o.startsWith('hume_'))hint='[E] '+['Colisão','Intervalo','Garfo'][parseInt(o.slice(5))]||'[E]';
+  if(window.VM_TOUCH)hint=hint.replace('[E]','[A]');
   ctx.fillText(hint,px,py-21);ctx.textAlign='left';
 }
 
@@ -1537,5 +1538,6 @@ function loop(ts){
 }
 document.fonts.ready.then(()=>requestAnimationFrame(loop));
 </script>
+<script src="../touch.js"></script>
 </body>
 </html>

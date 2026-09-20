@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Ventos Modernos — Cap. 3: O Calvinista de Königsberg</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
@@ -224,46 +224,66 @@ const KANT_SCEN=[
 ];
 
 // ── SPRITES DA PERSONAGEM (16×24 px · longilínea) ─────────────────
-const PPAL={_:null,H:'#2a1808',h:'#5a3820',x:'#7a5030',S:'#c8885a',s:'#a06030',e:'#f0f4f8',
-            W:'#f0ece0',w:'#d8d4c8',v:'#9870c0',r:'#c07888',g:'#6aaa40',
-            J:'#7090c0',j:'#4870a0',n:'#d4c8b0',G:'#c8a030'};
+// Raquel · 16×24 px · mesmo acabamento da Mari: contorno escuro, cabelo liso
+// longo com mechas e pontas mais claras, blusa branca frente-única com estampa
+// de bolinhas lilás e rosa, calça jeans clara e chinelos brancos
+const PPAL={_:null,K:'#1c0e06',k:'#4a2a14',q:'#6e4626',m:'#7a5230',l:'#a87c4c',
+            S:'#c68a5c',s:'#a06a40',e:'#f0f4f8',W:'#f2eee6',w:'#cfcac0',
+            L:'#b8a0e0',P:'#e870b0',J:'#8eaedc',j:'#6a8ac0',n:'#f4f2ee'};
 const PF0=[
-'____HHHHHHHH____','___HhhhhhhhhhH__','__HhSSSSSSSShhH_',
-'__HhSeHSSeHShhH_','__HhSSSSSSSShhH_','___HhSSssSShhH__',
-'___HhSSSSSShhH__','___HhSWWWWShhH__','__HhhWWWWWWWhhH_',
-'__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','__HhhWvWrWgWhhH_',
-'__HhhWWWWWWWhhH_','__HhhWWWWWWWhhH_','___HhWWWWWWhhH__',
-'__HhhjJJJJjhhH__','___HhjJJJJjhH___','____jJJJjJJJj___',
-'____jJJJjJJJj___',
-// pernas em passada alternada: uma avança e apoia, a outra recua e se ergue
-'____jJJJ_jJJJ___','_____jJJ_jJJJ___','______JJ_jJJJ___',
-'______nn_nnnnn__','__________nnnnn_'];
-const PF1=[...PF0.slice(0,19),
-'___JJJj_JJJj____','___JJJj_JJj_____','___JJJj_JJ______',
-'__nnnnn_nn______','_nnnnn__________'];
-const PB0=[ // costas: cabelo liso com brilho suave (revisado)
-'____HHHHHHHH____','___HhhhhhhhhhH__','__HhhhxxxxhhhhH_',
-'__HhhxhhhhxhhhH_','__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_',
-'__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_','__HhhhhhhhhhhhH_',
-'__HhhxhhhhhxhhH_','__HhhxhhhxhxhhH_','__HhhhhhhxhhhhH_',
-'__HhhhhhhhhhhhH_','__HHhhhhhhhhhHH_','___HhhWWWWWhhH__',
-'__HhhjJJJJjhhH__','___HhjJJJJjhH___','____jJJJjJJJj___',
-'____jJJJjJJJj___',
-'____jJJJ_jJJJ___','_____jJJ_jJJJ___','______JJ_jJJJ___',
-'______nn_nnnnn__','__________nnnnn_'];
-const PB1=[...PB0.slice(0,19),
-'___JJJj_JJJj____','___JJJj_JJj_____','___JJJj_JJ______',
-'__nnnnn_nn______','_nnnnn__________'];
+'____KKKKKKKK____','___KkqkkkqkkK___','__KkqSSSSSSkqK__',
+'__KkSeKSSeKSqK__','__KkSSSSSSSSkK__','__KkSSSssSSSkK__',
+'__KkqSSSSSSkqK__','__KkqkkSSkkkqK__','_KkkSSSWWSSSqkK_',
+'_KkSSWLWWLWSSkK_','_KmSWLWPLWWLSmK_','_KmSwwwwwwwwSmK_',
+'_KmSWWWWWWWWSmK_','__KlSWWWWWWSmK__','___swWWWWWWws___',
+'____jJJJJJJj____','____jJJJJJJj____','____jJJjjJJj____',
+'___jJJJ__JJJj___','___jJJJ__JJJj___','___jJJJ__JJJj___',
+'____nSn__JJJj___','____nnn___nSn___','__________nnn___'];
+const PF1=[
+'____KKKKKKKK____','___KkqkkkqkkK___','__KkqSSSSSSkqK__',
+'__KkSeKSSeKSqK__','__KkSSSSSSSSkK__','__KkSSSssSSSkK__',
+'__KkqSSSSSSkqK__','__KkqkkSSkkkqK__','_KkkSSSWWSSSqkK_',
+'_KkSSWLWWLWSSkK_','_KmSWLWPLWWLSmK_','_KmSwwwwwwwwSmK_',
+'_KmSWWWWWWWWSmK_','__KlSWWWWWWSmK__','___swWWWWWWws___',
+'____jJJJJJJj____','____jJJJJJJj____','____jJJjjJJj____',
+'___jJJJ__JJJj___','___jJJJ__JJJj___','___jJJJ__JJJj___',
+'___jJJJ___nSn___','____nSn___nnn___','____nnn_________'];
+const PB0=[
+'____KKKKKKKK____','___KqkkkqkkkK___','__KqqqkqqqkqqK__',
+'__KqqqkqqqkqqK__','__KkqkkkqkkkqK__','__KkqkkkqkkkqK__',
+'__KqkkkqkkkqkK__','__KqkkkqkkkqkK__','__SKkkkqkkkqKS__',
+'_SSKkkkqkkkqKSS_','_SSKmmmlmmmlKSS_','_SwKmmmlmmmlKwS_',
+'_SWKmmlmmmlmKWS_','__SWKmKmmKlKWS__','___wWWKWWKWWw___',
+'____jJJJJJJj____','____jJJJJJJj____','____jJJjjJJj____',
+'___jJJJ__JJJj___','___jJJJ__JJJj___','___jJJJ__JJJj___',
+'____nsn__JJJj___','____nnn___nsn___','__________nnn___'];
+const PB1=[
+'____KKKKKKKK____','___KqkkkqkkkK___','__KqqqkqqqkqqK__',
+'__KqqqkqqqkqqK__','__KkqkkkqkkkqK__','__KkqkkkqkkkqK__',
+'__KqkkkqkkkqkK__','__KqkkkqkkkqkK__','__SKkkkqkkkqKS__',
+'_SSKkkkqkkkqKSS_','_SSKmmmlmmmlKSS_','_SwKmmmlmmmlKwS_',
+'_SWKmmlmmmlmKWS_','__SWKmKmmKlKWS__','___wWWKWWKWWw___',
+'____jJJJJJJj____','____jJJJJJJj____','____jJJjjJJj____',
+'___jJJJ__JJJj___','___jJJJ__JJJj___','___jJJJ__JJJj___',
+'___jJJJ___nsn___','____nsn___nnn___','____nnn_________'];
 const PS0=[
-'____HHHHHHHH____','___HhhhhhHHhH___','__HhhSSSSHHhHH__',
-'_HhhSSSSSHHhHH__','_HhhSSSSeHhHH___','_HhhSSSSsSHhH___',
-'_HhhSSSSSSHhH___','_HhhSSSSHhH_____','_HhhhWWWWHhH____',
-'_HhhhWWWWHhH____','_HhhhWWWWHhH____','_HhhhWvWWHhH____',
-'_HhhhWWWWHhH____','_HhhhWWWWHhH____','_HhhhWWWHhH_____',
-'_HhhhJJJJHh_____','_HhhhJJJJHh_____','_HhhhJJJJH______',
-'__HhhJJJjH______','___HhJJJjH______','____HjJJjH______',
-'____HjJJjH______','____nnnnnH______','____nnnnH_______'];
-const PS1=[...PS0.slice(0,22),'__nnnnn_nnnH____','__nnnnn_nnH_____'];
+'_____KKKKKK_____','___KKkkqkkkK____','__KqqkqqqkqqK___',
+'__KqqkqqqSSSS___','__KqkkkqSSeKS___','__KqkkkqSSSSSS__',
+'__KkkkqkkSSsS___','__KkkkqkkkSS____','__KkkkqKSSWSS___',
+'__KkkkqKSWLWW___','__KmmmlKWLWSW___','__KmmmlKwwwSw___',
+'___KmlmKWWWSW___','___KmKmKWWWSW___','____K_K_wWWsw___',
+'________jJJJj___','________jJJJj___','________jJJJj___',
+'_______jJJ_JJj__','______jJJ___JJj_','______jJJ___JJj_',
+'_____jJJ_____JJj','____nSSn____nSSn','____nnnn____nnnn'];
+const PS1=[
+'_____KKKKKK_____','___KKkkqkkkK____','__KqqkqqqkqqK___',
+'__KqqkqqqSSSS___','__KqkkkqSSeKS___','__KqkkkqSSSSSS__',
+'__KkkkqkkSSsS___','__KkkkqkkkSS____','__KkkkqKSSWSS___',
+'__KkkkqKSWLWW___','__KmmmlKWLWSW___','__KmmmlKwwwSw___',
+'___KmlmKWWWSW___','___KmKmKWWWSW___','____K_K_wWWsw___',
+'________jJJJj___','________jJJJj___','________jJJJj___',
+'________jJJJ____','________jJJJ____','________jJJJ____',
+'________jJJJ____','________nSSnn___','________nnnnn___'];
 
 // ── SPRITES DA MARI (16×20 px · mais baixa e de pele mais clara que a Raquel ·
 //    cabelo cacheado, blusa preta de alcinha, calça jeans, sandálias claras) ──
@@ -847,7 +867,7 @@ function openDlg(key){
     S.dSel=0;
   } else if(key==='kant_table'){
     if(S.kantSelected.size<3){
-      S.okMsg=['Marque mais '+(3-S.kantSelected.size)+' juízo(s).','Use [E] nas tábuas de pedra.'];
+      S.okMsg=['Marque mais '+(3-S.kantSelected.size)+' juízo(s).','Use '+(window.VM_TOUCH?'[A]':'[E]')+' nas tábuas de pedra.'];
       S.okT=5.0;return;
     }
     const names=[...S.kantSelected].map(k=>KANT_TABLETS[k].name);
@@ -1449,7 +1469,8 @@ function rHint(){
   let hint='[E]';
   if(o==='kant_table')hint=S.kantSelected.size===3?'[E] Confirmar':'[E] '+S.kantSelected.size+'/3';
   if(o.startsWith('copern_'))hint='[E] Cenário '+(parseInt(o.slice(7))+1);
-  ctx.fillText(hint,px,py-16);ctx.textAlign='left';
+  if(window.VM_TOUCH)hint=hint.replace('[E]','[A]');
+  ctx.fillText(hint,px,py-27);ctx.textAlign='left';
 }
 
 // ── RÓTULO DE SETOR ────────────────────────────────────────────────
@@ -1654,5 +1675,6 @@ function loop(ts){
 }
 document.fonts.ready.then(()=>requestAnimationFrame(loop));
 </script>
+<script src="../touch.js"></script>
 </body>
 </html>
