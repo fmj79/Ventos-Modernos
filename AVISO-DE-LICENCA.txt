@@ -29,7 +29,7 @@ DESDE QUE RESPEITE AS SEGUINTES CONDIÇÕES
   Atribuição (BY) — é preciso dar o crédito apropriado, fornecer um link para
   a licença e indicar se foram feitas mudanças. Sugestão de crédito:
 
-      JESUINO, Filipe de Menezes. Ventos Modernos: uma revisão filosófica.
+      JESUINO, Filipe. Ventos Modernos: uma revisão filosófica.
       Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5.
       Licença CC BY-NC-SA 4.0.
 
