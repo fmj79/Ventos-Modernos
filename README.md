@@ -97,9 +97,12 @@ reproduz material protegido. A página de créditos traz a lista completa.
 Licenciado sob
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt):
 é livre compartilhar e adaptar, desde que se cite a autoria, não se use para
-fins comerciais e se mantenha a mesma licença nas obras derivadas. Veja o
-arquivo [LICENSE](LICENSE) para o alcance exato e para o que pertence a
-terceiros.
+fins comerciais e se mantenha a mesma licença nas obras derivadas.
+
+O arquivo [LICENSE](LICENSE) traz o texto legal completo da licença. O
+[AVISO-DE-LICENCA.txt](AVISO-DE-LICENCA.txt) resume as condições em português e
+delimita o alcance: o que é de autoria própria e o que pertence a terceiros,
+como as partituras, as fontes tipográficas e as obras citadas nos créditos.
 
 ## Como citar
 

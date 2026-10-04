@@ -1,0 +1,63 @@
+VENTOS MODERNOS — Uma Revisão Filosófica
+© 2026 Filipe de Menezes Jesuino
+
+Jogo: https://fmj79.github.io/Ventos-Modernos/
+Código-fonte: https://github.com/fmj79/Ventos-Modernos
+ORCID do autor: https://orcid.org/0000-0003-0374-3160
+
+Esta obra está licenciada sob a
+Creative Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional
+(CC BY-NC-SA 4.0).
+
+Texto legal completo: arquivo LICENSE, nesta mesma pasta, ou em
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.pt
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+
+Resumo da licença (não substitui o texto legal):
+https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt
+
+-------------------------------------------------------------------------------
+VOCÊ PODE
+
+  Compartilhar — copiar e redistribuir o material em qualquer suporte ou
+  formato.
+
+  Adaptar — remixar, transformar e criar a partir do material.
+
+DESDE QUE RESPEITE AS SEGUINTES CONDIÇÕES
+
+  Atribuição (BY) — é preciso dar o crédito apropriado, fornecer um link para
+  a licença e indicar se foram feitas mudanças. Sugestão de crédito:
+
+      JESUINO, Filipe de Menezes. Ventos Modernos: uma revisão filosófica.
+      Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5.
+      Licença CC BY-NC-SA 4.0.
+
+  NãoComercial (NC) — o material não pode ser usado para fins comerciais.
+
+  CompartilhaIgual (SA) — se o material for remixado, transformado ou servir
+  de base para outra obra, a obra derivada deve ser distribuída sob esta
+  mesma licença.
+
+Não há restrições adicionais: não é permitido aplicar termos jurídicos ou
+medidas de caráter tecnológico que restrinjam legalmente outras pessoas de
+fazerem algo que a licença permita.
+
+-------------------------------------------------------------------------------
+ALCANCE DESTA LICENÇA
+
+A licença cobre o que foi criado para este projeto: o código-fonte, os
+gráficos em pixel art, os textos, o roteiro e as questões didáticas.
+
+Não cobre, por não pertencerem ao autor:
+
+  - As obras filosóficas e musicais em domínio público usadas como base.
+  - A partitura do Premier Prélude de François Couperin, edição de Nicolas
+    Sceaux, publicada pelo Mutopia Project sob licença Creative Commons
+    Attribution 2.5 (CC BY 2.5). O uso aqui mantém a atribuição exigida.
+  - A fonte Press Start 2P, de CodeMan38, e a fonte IBM Plex Sans, da IBM,
+    ambas sob a SIL Open Font License 1.1.
+  - As marcas, títulos e obras de terceiros mencionados na página de créditos,
+    que pertencem a seus respectivos autores e detentores de direitos. As
+    menções têm caráter de citação e homenagem, sem qualquer vínculo com os
+    titulares e sem reprodução de material protegido.
