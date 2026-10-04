@@ -689,7 +689,7 @@ function update(dt){
     S.epT+=dt;
     if(S.epT>6.2&&(KP.Enter||KP.Space)){
       vmComplete('stage1');
-      location.href='../stage2/';
+      location.href='../stage2/?v=5';
     }
   }
 
@@ -1103,6 +1103,6 @@ function loop(ts){
 }
 document.fonts.ready.then(()=>requestAnimationFrame(loop));
 </script>
-<script src="../touch.js"></script>
+<script src="../touch.js?v=5"></script>
 </body>
 </html>

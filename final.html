@@ -19,7 +19,7 @@ html,body{width:100%;min-height:100vh;background:#03040a;display:flex;
 </head>
 <body>
 <canvas id="c" width="640" height="360"></canvas>
-<div id="sub">ENTER voltar ao hub  ·  R reiniciar a jornada</div>
+<div id="sub">ENTER créditos  ·  R reiniciar a jornada</div>
 <script>
 'use strict';
 const cv=document.getElementById('c'),ctx=cv.getContext('2d');
@@ -33,7 +33,7 @@ const S={t:0,frame:0,canAdvance:false};
 vmSetCompleted();
 
 window.addEventListener('keydown',e=>{
-  if(e.code==='Enter'||e.code==='Space'){if(S.canAdvance)location.href='index.html';e.preventDefault();}
+  if(e.code==='Enter'||e.code==='Space'){if(S.canAdvance)location.href='creditos.html?v=5';e.preventDefault();}
   if(e.code==='KeyR'){if(S.canAdvance){vmReset();location.href='index.html';}}
 });
 
@@ -112,7 +112,7 @@ function render(){
     ctx.fillText('Prof. Dr. Filipe de Menezes Jesuino',W/2,H-15);
     if(S.frame%30<20){
       ctx.fillStyle='#f0d878';ctx.font='4px "Press Start 2P"';
-      ctx.fillText('ENTER → voltar ao hub',W/2,H-5);
+      ctx.fillText('ENTER → créditos',W/2,H-5);
     }
     ctx.textAlign='left';
   }
@@ -126,6 +126,6 @@ function loop(ts){
 }
 document.fonts.ready.then(()=>requestAnimationFrame(loop));
 </script>
-<script src="touch.js"></script>
+<script src="touch.js?v=5"></script>
 </body>
 </html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ventos Modernos — Créditos</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#05060c; --panel:#0b0b14; --line:#2a2018;
+  --gold:#e8d8a0; --gold-dim:#a89058; --gold-low:#6a5a40;
+  --text:#d8d2c4; --text-dim:#8e8676;
+}
+html{background:var(--bg)}
+body{background:
+    radial-gradient(900px 420px at 50% -120px, rgba(200,150,60,.10), rgba(0,0,0,0) 70%),
+    linear-gradient(180deg,#0a0612 0%,#120e10 45%,#0a0c14 100%) fixed;
+  color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;
+  font-size:16px;line-height:1.65;min-height:100vh;
+  padding:0 16px calc(56px + env(safe-area-inset-bottom));
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto}
+
+header{text-align:center;padding:56px 0 28px}
+h1{font-family:'Press Start 2P',monospace;font-size:clamp(15px,4.4vw,26px);
+  color:var(--gold);letter-spacing:1px;line-height:1.5}
+.sub{font-family:'Press Start 2P',monospace;font-size:clamp(7px,2.1vw,10px);
+  color:var(--gold-dim);margin-top:14px;letter-spacing:.5px}
+.rule{height:1px;margin:26px 0;
+  background:repeating-linear-gradient(90deg,#3a3424 0 10px,transparent 10px 20px)}
+
+section{background:rgba(10,10,18,.55);border:1px solid var(--line);
+  border-radius:2px;padding:22px 20px;margin:0 0 18px;
+  box-shadow:0 0 30px rgba(120,90,40,.06) inset}
+h2{font-family:'Press Start 2P',monospace;font-size:clamp(9px,2.6vw,12px);
+  color:var(--gold);line-height:1.6;margin-bottom:14px}
+h3{font-family:'Press Start 2P',monospace;font-size:clamp(7px,2.1vw,9px);
+  color:var(--gold-dim);line-height:1.7;margin:18px 0 8px;letter-spacing:.3px}
+h3:first-of-type{margin-top:0}
+p{margin:0 0 12px}
+p:last-child{margin-bottom:0}
+ul{list-style:none;margin:0 0 12px}
+li{padding-left:16px;position:relative;margin-bottom:9px}
+li::before{content:'';position:absolute;left:0;top:10px;width:5px;height:5px;
+  background:var(--gold-dim)}
+li:last-child{margin-bottom:0}
+strong{color:var(--gold);font-weight:600}
+em{color:var(--text);font-style:italic}
+.meta{color:var(--text-dim);font-size:14px}
+a{color:var(--gold-dim);text-underline-offset:3px}
+a:hover{color:var(--gold)}
+
+.nota{border-left:2px solid var(--gold-low);background:rgba(0,0,0,.25);
+  padding:14px 16px;margin-top:16px;font-size:14px;color:var(--text-dim)}
+
+.voltar{display:block;max-width:340px;margin:30px auto 10px;padding:16px 18px;
+  text-align:center;text-decoration:none;border:2px solid var(--gold-dim);
+  border-radius:2px;color:var(--gold);background:rgba(40,30,16,.5);
+  font-family:'Press Start 2P',monospace;font-size:clamp(8px,2.4vw,11px);
+  line-height:1.6}
+.voltar:hover{background:rgba(220,180,90,.22);color:var(--gold)}
+footer{text-align:center;color:var(--gold-low);font-family:'Press Start 2P',monospace;
+  font-size:clamp(6px,1.8vw,8px);line-height:2.2;padding:14px 0 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>VENTOS MODERNOS</h1>
+  <div class="sub">Uma Revisão Filosófica — Créditos</div>
+</header>
+
+<div class="rule"></div>
+
+<section>
+  <h2>Concepção e desenvolvimento</h2>
+  <p>Formulado e elaborado por <strong>Filipe de Menezes Jesuino</strong>, professor da
+  Universidade de Fortaleza (UNIFOR), como atividade didática da disciplina
+  Fundamentos Filosóficos e Epistemológicos da Psicologia — Turma 51.</p>
+  <p>Roteiro, desenho das fases, questões e arte em pixel desenvolvidos em diálogo com
+  <strong>Claude (Cowork)</strong>, da Anthropic.</p>
+  <h3>Tecnologia</h3>
+  <ul>
+    <li>HTML5 com Canvas 2D e JavaScript, sem bibliotecas externas.</li>
+    <li>Áudio sintetizado em tempo real pela Web Audio API: síntese FM para os efeitos
+    e leitor de MIDI próprio para as músicas.</li>
+    <li>Gráficos desenhados pixel a pixel no próprio código, em resolução interna de
+    320×180 — nenhum arquivo de imagem é carregado.</li>
+    <li>Tipografia <em>Press Start 2P</em>, de CodeMan38, e <em>IBM Plex Sans</em>, da IBM,
+    ambas sob a SIL Open Font License.</li>
+    <li>Publicado no GitHub Pages. Código-fonte em <a href="https://github.com/fmj79/Ventos-Modernos" target="_blank" rel="noopener">github.com/fmj79/Ventos-Modernos</a>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Personagens</h2>
+  <p>As duas protagonistas foram inspiradas nas monitoras da disciplina, a quem o jogo
+  é dedicado:</p>
+  <ul>
+    <li><strong>Raquel D'Anne Marie Vieira Leite Pereira</strong> — protagonista do
+    Capítulo I e líder da dupla no Capítulo III.</li>
+    <li><strong>Mariana Penido de Sá Pessoa</strong> — protagonista do Capítulo II e
+    segunda integrante da equipe no Capítulo III.</li>
+  </ul>
+  <p class="meta">Os avatares são desenhos originais em pixel art, criados para este jogo.</p>
+</section>
+
+<section>
+  <h2>Filosofia</h2>
+  <p>O percurso acompanha a formação do pensamento moderno, de obras em domínio público:</p>
+  <ul>
+    <li><strong>Capítulo I — O Labirinto de Descartes.</strong> René Descartes,
+    <em>Meditações Metafísicas</em> (1641): a dúvida metódica, o gênio maligno e o cogito.</li>
+    <li><strong>Capítulo II — A Cruzada Sensorial.</strong> Francis Bacon, <em>Novum
+    Organum</em> (1620), e a tipologia dos ídolos; John Locke, <em>Ensaio sobre o
+    Entendimento Humano</em> (1690), e a tábula rasa; David Hume, <em>Tratado da Natureza
+    Humana</em> (1739-40), e a crítica à causalidade.</li>
+    <li><strong>Capítulo III — O Calvinista de Königsberg.</strong> Immanuel Kant,
+    <em>Crítica da Razão Pura</em> (1781): os juízos sintéticos a priori, as formas da
+    sensibilidade e a revolução copernicana.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Músicas</h2>
+  <p>Todas as peças são de compositores em domínio público. As partituras vêm de edições
+  livres, e os arquivos MIDI foram gerados localmente com o LilyPond e são sintetizados
+  pelo próprio navegador — nenhuma gravação de terceiros é usada.</p>
+  <h3>Capítulo I</h3>
+  <p>François Couperin (1668-1733), <em>Premier Prélude</em>, de <em>L'Art de toucher le
+  clavecin</em> (1716). Partitura de Nicolas Sceaux, publicada pelo
+  <a href="https://www.mutopiaproject.org" target="_blank" rel="noopener">Mutopia Project</a>
+  sob licença Creative Commons Attribution 2.5.</p>
+  <h3>Capítulo II</h3>
+  <p>Henry Purcell (1659-1695), <em>Fairest Isle</em>, da semiópera <em>King Arthur</em>
+  (1691). Edição de Sebastian Brosig, publicada pelo Mutopia Project em domínio público.</p>
+  <h3>Capítulo III</h3>
+  <p>Heinrich Schütz (1585-1672), peça coral a cinco vozes, a partir de partitura em
+  domínio público.</p>
+  <h3>Efeitos sonoros</h3>
+  <p>Criados para o jogo por síntese FM, com reverberação gerada por ruído processado.
+  Não há arquivos de áudio gravados.</p>
+</section>
+
+<section>
+  <h2>Referências e homenagens</h2>
+  <p>O jogo conversa com obras da cultura de massa que marcaram quem o fez. Nenhuma delas
+  tem vínculo com este projeto, e nada foi copiado: as citações são menções em texto, na
+  forma de nomes, títulos e estruturas narrativas.</p>
+  <ul>
+    <li><strong>JoJo's Bizarre Adventure</strong> (ジョジョの奇妙な冒険), de Hirohiko Araki —
+    publicado por Shueisha, anime produzido pela David Production. Daí vêm a ideia dos
+    Stands invocados pelos antagonistas e o costume, próprio da obra, de batizá-los com
+    nomes de bandas e discos.</li>
+    <li><strong>Yes</strong> — <em>Close to the Edge</em> (1972) e <em>The Ancient</em>,
+    de <em>Tales from Topographic Oceans</em> (1973), Atlantic Records. Nomeiam o Stand e
+    a habilidade do Capítulo III.</li>
+    <li><strong>The Jimi Hendrix Experience</strong> — <em>Are You Experienced</em> (1967),
+    Track Record / Reprise Records. Dá nome ao estado da protagonista no Capítulo II.</li>
+    <li><strong>Phantasy Star IV: The End of the Millennium</strong> (Sega, 1993). Inspirou
+    a fila da equipe no Capítulo III, com a segunda personagem seguindo os passos da
+    primeira.</li>
+    <li><strong>A estética dos JRPGs de 16 bits</strong> do início dos anos 1990, com seus
+    mapas em grade, caixas de diálogo e personagens de quatro direções.</li>
+  </ul>
+  <div class="nota">
+    Todas as marcas, títulos, personagens e obras citados pertencem a seus respectivos
+    autores e detentores de direitos. <strong>Ventos Modernos</strong> é uma atividade
+    didática sem fins lucrativos, não oficial, sem qualquer vínculo com os titulares
+    mencionados e sem uso de material protegido: a arte, os textos e a trilha sonora do
+    jogo são originais ou de domínio público. As menções têm caráter de citação e
+    homenagem.
+  </div>
+</section>
+
+<section>
+  <h2>Licença de uso</h2>
+  <p><strong>Ventos Modernos</strong> está licenciado sob
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt" target="_blank" rel="noopener">Creative
+  Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.
+  É livre compartilhar e adaptar o jogo, desde que se cite a autoria, não se use para
+  fins comerciais e as obras derivadas mantenham esta mesma licença.</p>
+  <p class="meta">Como citar: JESUINO, Filipe de Menezes. <em>Ventos Modernos: uma revisão
+  filosófica</em>. Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5.</p>
+  <p class="meta">Fortaleza, Ceará — 2026.</p>
+</section>
+
+<a class="voltar" href="index.html">↩ Voltar ao início</a>
+
+<footer>
+  UNIFOR — Fundamentos Filosóficos e Epistemológicos da Psicologia<br>
+  Prof. Dr. Filipe de Menezes Jesuino
+</footer>
+
+</div>
+<script>
+'use strict';
+// ENTER, ESPAÇO ou ESC voltam ao menu, como nas outras telas do jogo
+addEventListener('keydown',e=>{
+  if(e.code==='Enter'||e.code==='Space'||e.code==='Escape'){
+    e.preventDefault();location.href='index.html?v=5';
+  }
+});
+</script>
+</body>
+</html>

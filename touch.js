@@ -6,6 +6,7 @@
   const touch=('ontouchstart' in window)||navigator.maxTouchPoints>0||
               (window.matchMedia&&matchMedia('(pointer:coarse)').matches);
   if(!touch)return;
+  if(/creditos\.html$/.test(location.pathname))return;  // página de texto, rolagem normal
   window.VM_TOUCH=true;
 
   const ROOT=new URL('.',document.currentScript.src).href;
