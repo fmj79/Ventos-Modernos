@@ -51,6 +51,13 @@ em{color:var(--text);font-style:italic}
 a{color:var(--gold-dim);text-underline-offset:3px}
 a:hover{color:var(--gold)}
 
+.cc-marca{margin-top:16px;padding:14px 16px;border:1px solid var(--line);
+  background:rgba(0,0,0,.25);font-size:14px;color:var(--text-dim);line-height:1.9}
+.cc-selo{display:inline-block;white-space:nowrap}
+.cc-icones{display:inline-flex;gap:3px;margin-left:5px;vertical-align:-2px}
+.cc-icones img{height:16px;width:16px;display:block}
+@media (prefers-color-scheme:dark){.cc-icones img{filter:invert(1) brightness(1.6)}}
+.cc-icones img{filter:invert(1) brightness(1.6)}
 .nota{border-left:2px solid var(--gold-low);background:rgba(0,0,0,.25);
   padding:14px 16px;margin-top:16px;font-size:14px;color:var(--text-dim)}
 
@@ -76,7 +83,7 @@ footer{text-align:center;color:var(--gold-low);font-family:'Press Start 2P',mono
 
 <section>
   <h2>Concepção e desenvolvimento</h2>
-  <p>Formulado e elaborado por <strong>Filipe de Menezes Jesuino</strong>, professor da
+  <p>Formulado e elaborado por <strong><a href="https://orcid.org/0000-0003-0374-3160" target="_blank" rel="noopener">Filipe de Menezes Jesuino</a></strong>, professor da
   Universidade de Fortaleza (UNIFOR), como atividade didática da disciplina
   Fundamentos Filosóficos e Epistemológicos da Psicologia — Turma 51.</p>
   <p>Roteiro, desenho das fases, questões e arte em pixel desenvolvidos em diálogo com
@@ -182,8 +189,22 @@ footer{text-align:center;color:var(--gold-low);font-family:'Press Start 2P',mono
   Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.
   É livre compartilhar e adaptar o jogo, desde que se cite a autoria, não se use para
   fins comerciais e as obras derivadas mantenham esta mesma licença.</p>
-  <p class="meta">Como citar: JESUINO, Filipe de Menezes. <em>Ventos Modernos: uma revisão
-  filosófica</em>. Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5.</p>
+  <p class="cc-marca" xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+    <a property="dct:title" rel="cc:attributionURL" href="https://fmj79.github.io/Ventos-Modernos/">Ventos
+    Modernos: uma revisão filosófica</a> &copy; 2026 por
+    <a rel="cc:attributionURL dct:creator" property="cc:attributionName"
+       href="https://orcid.org/0000-0003-0374-3160" target="_blank" rel="noopener">Filipe Jesuino</a>
+    está licenciado sob
+    <a class="cc-selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+       target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0<span class="cc-icones"><img
+       src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC"><img
+       src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY"><img
+       src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC"><img
+       src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA"></span></a>
+  </p>
+  <p class="meta">Como citar: JESUINO, Filipe. <em>Ventos Modernos: uma revisão
+  filosófica</em>. Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5.
+  Disponível em: https://fmj79.github.io/Ventos-Modernos/.</p>
   <p class="meta">Fortaleza, Ceará — 2026.</p>
 </section>
 
@@ -198,6 +219,10 @@ footer{text-align:center;color:var(--gold-low);font-family:'Press Start 2P',mono
 <script>
 'use strict';
 // ENTER, ESPAÇO ou ESC voltam ao menu, como nas outras telas do jogo
+// Se os ícones da Creative Commons não carregarem, some com eles: o texto basta
+document.querySelectorAll('.cc-icones img').forEach(img=>{
+  img.addEventListener('error',()=>img.remove());
+});
 addEventListener('keydown',e=>{
   if(e.code==='Enter'||e.code==='Space'||e.code==='Escape'){
     e.preventDefault();location.href='index.html?v=5';
