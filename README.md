@@ -1,5 +1,7 @@
 # Ventos Modernos — Uma Revisão Filosófica
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23147405.svg)](https://doi.org/10.5281/zenodo.23147405)
+
 Jogo didático em HTML5 sobre a formação do pensamento moderno, feito para a
 disciplina Fundamentos Filosóficos e Epistemológicos da Psicologia da
 Universidade de Fortaleza (UNIFOR).
@@ -108,7 +110,11 @@ como as partituras, as fontes tipográficas e as obras citadas nos créditos.
 
 JESUINO, Filipe. **Ventos Modernos: uma revisão filosófica**.
 Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5. Disponível
-em: https://fmj79.github.io/Ventos-Modernos/.
+em: https://fmj79.github.io/Ventos-Modernos/. DOI: https://doi.org/10.5281/zenodo.23147405.
+
+O DOI acima é o de conceito do Zenodo: ele resolve sempre para a versão mais
+recente. Para citar uma versão específica, use o DOI dessa versão, indicado na
+página do depósito.
 
 O arquivo [`CITATION.cff`](CITATION.cff) traz os mesmos dados em formato
 legível por máquina, usado pelo GitHub e pelo Zenodo.

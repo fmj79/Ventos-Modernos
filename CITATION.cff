@@ -29,8 +29,7 @@ keywords:
   - recurso educacional aberto
   - filosofia moderna
   - HTML5
-# Depois do depósito no Zenodo, acrescente a linha
-#   doi: "10.5281/zenodo.XXXXXXX"
-# usando o DOI de conceito (o que aponta sempre para a versão mais recente).
+# DOI de conceito do Zenodo: aponta sempre para a versão mais recente.
+doi: "10.5281/zenodo.23147405"
 url: "https://fmj79.github.io/Ventos-Modernos/"
 repository-code: "https://github.com/fmj79/Ventos-Modernos"
