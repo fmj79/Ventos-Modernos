@@ -108,7 +108,7 @@ como as partituras, as fontes tipográficas e as obras citadas nos créditos.
 
 ## Como citar
 
-JESUINO, Filipe. **Ventos Modernos: uma revisão filosófica**.
+JESUINO, Filipe de Menezes. **Ventos Modernos: uma revisão filosófica**.
 Fortaleza: Universidade de Fortaleza, 2026. Jogo didático em HTML5. Disponível
 em: https://fmj79.github.io/Ventos-Modernos/. DOI: https://doi.org/10.5281/zenodo.23147405.
 
